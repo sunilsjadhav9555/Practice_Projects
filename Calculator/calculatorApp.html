@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <style>
+      body {
+        background-color: rgb(101, 87, 87);
+      }
+      .calculator {
+        justify-content: center;
+        width: 170px;
+        margin: 0 auto;
+        border: 1px solid black;
+        padding: 30px;
+        background-color: rgb(88, 92, 92);
+      }
+
+      #result {
+        color: rgb(85, 122, 155);
+        width: 150px;
+        padding: 10px;
+        margin: 1.5px;
+        text-align: right;
+        font-size: 14px;
+      }
+
+      .buttons button {
+        width: 40px;
+        height: 50px;
+        margin: 5px;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 30px;
+        justify-content: center;
+        justify-items: center;
+        background-color: rgb(149, 149, 218);
+      }
+    </style>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="calculator">
+      <h1>Calculator</h1>
+      <input type="text" id="result" disabled />
+      <div class="buttons">
+        <button value="9">9</button>
+        <button value="8">8</button>
+        <button value="7">7</button>
+        <button value="6">6</button>
+        <button value="5">5</button>
+        <button value="4">4</button>
+        <button value="3">3</button>
+        <button value="2">2</button>
+        <button value="1">1</button>
+        <button value="0">0</button>
+        <button class="operator" value=" + ">+</button>
+        <button class="operator" value=" - ">-</button>
+        <button class="operator" value=" * ">*</button>
+        <button class="operator" value=" / ">/</button>
+        <button class="decimal" value=".">.</button>
+        <button class="operator" value=" % ">%</button>
+        <button class="clear" value="C">C</button>
+        <button class="equal-sign" value="=">=</button>
+      </div>
+    </div>
+    <script>
+      const result = document.getElementById("result");
+      const buttons = document.querySelectorAll("button");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          if (button.value === "=") {
+            result.value = eval(result.value);
+          } else if (button.value === "C") {
+            result.value = "";
+          } else {
+            result.value += button.value;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
