@@ -1,0 +1,21 @@
+* {
+  background-color: rgb(59, 110, 161);
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: rgb(73, 104, 101);
+}
+h1,
+h2,
+p {
+  color: aliceblue;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+button:hover{
+  background-color: blue;
+}
